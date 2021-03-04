@@ -8,12 +8,12 @@
       "DeploymentBucketName": "amplify-amplifye2f2563760484-staging-64232-deployment",
       "UnauthRoleName": "amplify-amplifye2f2563760484-staging-64232-unauthRole",
       "StackName": "amplify-amplifye2f2563760484-staging-64232",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:155830630328:stack/amplify-amplifye2f2563760484-staging-64232/bd5a4aa0-7c93-11eb-870d-0aff14bc0982",
-      "AmplifyAppId": "dn40ei2sltghl"
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:155830630328:stack/amplify-amplifye2f2563760484-staging-64232/a2dac770-7beb-11eb-a22b-0e42e3cf61fd",
+      "AmplifyAppId": "dvnktffaupbka"
     },
     "categories": {
       "auth": {
-        "foodstockb9a9c89d": {}
+        "foodstock4e32de38": {}
       }
     }
   }

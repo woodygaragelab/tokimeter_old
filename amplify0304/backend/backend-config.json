@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "foodstock4e32de38": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
