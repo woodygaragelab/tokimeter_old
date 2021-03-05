@@ -76,7 +76,7 @@ function App() {
         {
           notes.map(note => (
             <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
+              <p>{note.name}</p>
               <p>{note.description}</p>
               <button onClick={() => deleteNote(note)}>Delete person</button>
               {
