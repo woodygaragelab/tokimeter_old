@@ -76,8 +76,8 @@ function App() {
         {
           notes.map(note => (
             <div key={note.id || note.name}>
-              <p>{note.name}</p>
-              <p>{note.description}</p>
+              <div>{note.name}</div>
+              <div>{note.description}</div>
               <button onClick={() => deleteNote(note)}>Delete person</button>
               {
                 note.image && <img src={note.image} style={{width: 100}} />
