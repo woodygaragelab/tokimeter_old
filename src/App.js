@@ -14,7 +14,8 @@ function App() {
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchNotes();
+    // fetchNotes();
+    fetchPersons();
   }, []);
 
   async function fetchNotes() {
@@ -28,6 +29,19 @@ function App() {
       return note;
     }))
     setNotes(apiData.data.listNotes.items);
+  }
+
+  async function fetchPersons() {
+    const apiData = await API.graphql({ query: listPersons });
+    const notesFromAPI = apiData.data.listPersons.items;
+    await Promise.all(notesFromAPI.map(async person => {
+      if (person.image) {
+        const image = await Storage.get(person.image);
+        person.image = image;
+      }
+      return person;
+    }))
+    setPersons(apiData.data.listPersons.items);
   }
 
   async function createNote() {
@@ -88,13 +102,19 @@ function App() {
       <button onClick={createPerson}>Create Person</button>
       <div style={{marginBottom: 30}}>
         {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <div>{note.name}</div>
-              <div>{note.description}</div>
-              <button onClick={() => deleteNote(note)}>Delete person</button>
+          // notes.map(note => (
+          persons.map(person => (
+              // <div key={note.id || note.name}>
+              <div key={person.id || person.name}>
+              {/* <div>{note.name}</div> */}
+              <div>{person.name}</div>
+              {/* <div>{note.description}</div> */}
+              <div>{person.description}</div>
+              {/* <button onClick={() => deleteNote(note)}>Delete person</button> */}
+              <button onClick={() => deletePerson(person)}>Delete person</button>
               {
-                note.image && <img src={note.image} style={{width: 100}} />
+                // note.image && <img src={note.image} style={{width: 100}} />
+                person.image && <img src={person.image} style={{width: 100}} />
               }
             </div>
           ))
