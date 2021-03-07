@@ -10,6 +10,7 @@ const initialFormState = { name: '', description: '' }
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [persons, setPresons] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
