@@ -3,6 +3,7 @@ import './App.css';
 import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
+import { listPersons } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { createPerson as createPersonMutation, deletePerson as deletePersonMutation } from './graphql/mutations';
 
@@ -70,6 +71,12 @@ function App() {
     const newNotesArray = notes.filter(note => note.id !== id);
     setNotes(newNotesArray);
     await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
+  }
+
+  async function deletePerson({ id }) {
+    const newPersonsArray = persons.filter(person => person.id !== id);
+    setPersons(newPersonsArray);
+    await API.graphql({ query: deletePersonMutation, variables: { input: { id } }});
   }
 
   async function onChange(e) {
