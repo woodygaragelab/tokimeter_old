@@ -39,6 +39,17 @@ function App() {
     setFormData(initialFormState);
   }
 
+  async function createPerson() {
+    if (!formData.name || !formData.description) return;
+    await API.graphql({ query: createPersonMutation, variables: { input: formData } });
+    if (formData.image) {
+      const image = await Storage.get(formData.image);
+      formData.image = image;
+    }
+    setPerson([ ...person, formData ]);
+    setFormData(initialFormState);
+  }
+
   async function deleteNote({ id }) {
     const newNotesArray = notes.filter(note => note.id !== id);
     setNotes(newNotesArray);
