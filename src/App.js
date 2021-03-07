@@ -48,7 +48,7 @@ function App() {
       const image = await Storage.get(formData.image);
       formData.image = image;
     }
-    setPerson([ ...person, formData ]);
+    setPersons([ ...persons, formData ]);
     setFormData(initialFormState);
   }
 
