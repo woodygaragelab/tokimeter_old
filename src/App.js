@@ -57,10 +57,28 @@ function App() {
     fetchPersons();
   }
 
-  
   return (
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>Food Stock</h1>
+      <div style={{marginBottom: 30}}>
+        {
+          persons.map(person => (
+            <Card>
+            <Card.Body>
+              <div key={person.id || person.name}>
+                {
+                  person.image && <img src={person.image} style={{width: 100}} />
+                }
+                <div>{person.name}</div>
+                <div>{person.description}</div>
+                <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
+              </div>              
+            </Card.Body>
+            </Card>
+          ))
+        }
+        </div>
+
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="Note name"
@@ -75,30 +93,8 @@ function App() {
         type="file"
         onChange={onChange}
       />
-      {/* <button onClick={createPerson}>Create Person</button> */}
       <Button onClick={createPerson} variant="outline-primary">Create Person</Button>
-      <div style={{marginBottom: 30}}>
-        {
-          persons.map(person => (
-            <Card>
-            <Card.Body>
-            
-            <div key={person.id || person.name}>
 
-              <div>{person.name}</div>
-              <div>{person.description}</div>
-              <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
-              {
-                person.image && <img src={person.image} style={{width: 100}} />
-              }
-
-            </div>
-              
-            </Card.Body>
-            </Card>
-          ))
-        }
-        </div>
       <AmplifySignOut />
     </div>
   );
