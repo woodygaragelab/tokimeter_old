@@ -5,6 +5,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listPersons } from './graphql/queries';
 import { createPerson as createPersonMutation, deletePerson as deletePersonMutation } from './graphql/mutations';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 const initialFormState = { name: '', description: '' }
 
@@ -73,7 +74,8 @@ function App() {
         type="file"
         onChange={onChange}
       />
-      <button onClick={createPerson}>Create Person</button>
+      {/* <button onClick={createPerson}>Create Person</button> */}
+      <Button onClick={createPerson} variant="outline-primary">Create Person</Button>
       <div style={{marginBottom: 30}}>
         {
           persons.map(person => (
