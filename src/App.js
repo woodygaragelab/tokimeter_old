@@ -4,6 +4,7 @@ import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listPersons } from './graphql/queries';
 import { createPerson as createPersonMutation, deletePerson as deletePersonMutation } from './graphql/mutations';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialFormState = { name: '', description: '' }
 
