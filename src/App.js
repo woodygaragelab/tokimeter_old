@@ -71,7 +71,7 @@ function App() {
                 {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
                 } */}
-                  <img src={person.image} style={{width: 100,height:100}}/>
+                  <img src={person.image} style={{width: 50,height:50}}/>
                 </div>
                 <div class="col-xs-6">
                   <div class="row">{person.name}</div>
