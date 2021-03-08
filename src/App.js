@@ -71,7 +71,7 @@ function App() {
                 {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
                 } */}
-                  <img src={person.image} />
+                  <img src={person.image} style={{width: 100,height:100}}/>
                 </div>
                 <div class="col-md-3">
                   <div class="row">{person.name}</div>
@@ -87,7 +87,7 @@ function App() {
         }
         </div>
 
-      <Button onClick={createPerson} variant="outline-primary">+</Button>
+      <Button onClick={createPerson} variant="outline-primary">ADD</Button>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="name"
