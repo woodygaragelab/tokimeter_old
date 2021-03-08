@@ -76,7 +76,9 @@ function App() {
                   <div class="row">{person.name}</div>
                   <div class="row">{person.description}</div>
                 </div>
-                <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
+                <div class="col-md-3">
+                  <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
+                </div>
               </div>              
             </Card.Body>
             </Card>
