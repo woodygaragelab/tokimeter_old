@@ -68,16 +68,17 @@ function App() {
               {/* <div key={person.id || person.name}> */}
               <div class="row">
                 <div class="col-md-3">
-                {
+                {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
-                }
+                } */}
+                  <img src={person.image} />
                 </div>
                 <div class="col-md-3">
                   <div class="row">{person.name}</div>
                   <div class="row">{person.description}</div>
                 </div>
                 <div class="col-md-3">
-                  <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
+                  <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
                 </div>
               </div>              
             </Card.Body>
@@ -86,21 +87,21 @@ function App() {
         }
         </div>
 
+      <Button onClick={createPerson} variant="outline-primary">+</Button>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
+        placeholder="name"
         value={formData.name}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
+        placeholder="description"
         value={formData.description}
       />
       <input
         type="file"
         onChange={onChange}
       />
-      <Button onClick={createPerson} variant="outline-primary">Create Person</Button>
 
       <AmplifySignOut />
     </div>
