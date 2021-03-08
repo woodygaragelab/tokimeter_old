@@ -6,6 +6,7 @@ import { listPersons } from './graphql/queries';
 import { createPerson as createPersonMutation, deletePerson as deletePersonMutation } from './graphql/mutations';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const initialFormState = { name: '', description: '' }
 
@@ -79,14 +80,22 @@ function App() {
       <div style={{marginBottom: 30}}>
         {
           persons.map(person => (
-              <div key={person.id || person.name}>
+            <Card>
+            <Card.Body>
+            
+            <div key={person.id || person.name}>
+
               <div>{person.name}</div>
               <div>{person.description}</div>
-              <button onClick={() => deletePerson(person)}>Delete person</button>
+              <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
               {
                 person.image && <img src={person.image} style={{width: 100}} />
               }
+
             </div>
+              
+            </Card.Body>
+            </Card>
           ))
         }
         </div>
