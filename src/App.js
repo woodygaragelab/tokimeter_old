@@ -67,17 +67,17 @@ function App() {
             <Card.Body>
               {/* <div key={person.id || person.name}> */}
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                 {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
                 } */}
                   <img src={person.image} style={{width: 100,height:100}}/>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-6">
                   <div class="row">{person.name}</div>
                   <div class="row">{person.description}</div>
                 </div>
-                <div class="col-xs-3">
+                <div class="col-xs-2">
                   <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
                 </div>
               </div>              
