@@ -65,12 +65,17 @@ function App() {
           persons.map(person => (
             <Card>
             <Card.Body>
-              <div key={person.id || person.name}>
+              {/* <div key={person.id || person.name}> */}
+              <div class="row">
+                <div class="col-md-3">
                 {
                   person.image && <img src={person.image} style={{width: 100}} />
                 }
-                <div>{person.name}</div>
-                <div>{person.description}</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="row">{person.name}</div>
+                  <div class="row">{person.description}</div>
+                </div>
                 <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete person</Button>
               </div>              
             </Card.Body>
