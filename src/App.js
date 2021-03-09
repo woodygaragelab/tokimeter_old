@@ -73,10 +73,12 @@ function App() {
                 } */}
                   <img src={person.image} style={{width: 50,height:50}}/>
                 </div>
-                {/* <div class="col-xs-6"> */}
-                  <div class="col-4">{person.name}</div>
-                  <div class="col-2">{person.description}</div>
-                {/* </div> */}
+                <div class="col-xs-6">
+                  {/* <div class="col-4">{person.name}</div>
+                  <div class="col-2">{person.description}</div> */}
+                  <div>{person.name}</div>
+                  <div>{person.description}</div>
+                </div>
                 <div class="col-2">
                 {/* <div class="col-xs-2 pull-right"> */}
                   <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
@@ -92,21 +94,21 @@ function App() {
       <div class="container-fluid">
       <div class="row">
         <Button onClick={createPerson} variant="outline-primary">ADD</Button>
-        <div class="col-xs-3">
+        <div class="col-3">
           <input
             onChange={e => setFormData({ ...formData, 'name': e.target.value})}
             placeholder="name"
             value={formData.name}
           />
         </div>
-        <div class="col-xs-3">
+        <div class="col-3">
           <input
             onChange={e => setFormData({ ...formData, 'description': e.target.value})}
             placeholder="description"
             value={formData.description}
           />
         </div>
-        <div class="col-xs-3">
+        <div class="col-3">
           <input
             type="file"
             onChange={onChange}
