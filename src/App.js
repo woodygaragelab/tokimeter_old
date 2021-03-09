@@ -66,8 +66,8 @@ function App() {
             <Card>
             <Card.Body>
               {/* <div key={person.id || person.name}> */}
+              <div class="container">
               <div class="row">
-              {/* <div class="container-fluid"> */}
                 <div class="col-xs-4">
                 {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
@@ -82,6 +82,7 @@ function App() {
                 <div class="col-xs-2 pull-right">
                   <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
                 </div>
+              </div>              
               </div>              
             </Card.Body>
             </Card>
