@@ -53,7 +53,6 @@ function App() {
     const file = e.target.files[0];
     setFormData({ ...formData, image: file.name });
     await Storage.put(file.name, file);
-    // fetchNotes();
     fetchPersons();
   }
 
@@ -74,12 +73,12 @@ function App() {
                 } */}
                   <img src={person.image} style={{width: 50,height:50}}/>
                 </div>
-                <div class="col-xs-6">
-                  <div class="col-xs-6">{person.name}</div>
-                  <div class="col-xs-6">{person.description}</div>
-                </div>
-                {/* <div class="col-xs-2"> */}
-                <div class="col-xs-2 pull-right">
+                {/* <div class="col-xs-6"> */}
+                  <div class="col-xs-4">{person.name}</div>
+                  <div class="col-xs-2">{person.description}</div>
+                {/* </div> */}
+                <div class="col-xs-2">
+                {/* <div class="col-xs-2 pull-right"> */}
                   <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
                 </div>
               </div>              
@@ -116,10 +115,10 @@ function App() {
       </div>              
       </div>              
 
-      {/* <AmplifySignOut /> */}
+      <AmplifySignOut />
     </div>
   );
 }
 
-//export default withAuthenticator(App);
-export default App;
+export default withAuthenticator(App);
+// export default App;
