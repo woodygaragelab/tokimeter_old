@@ -66,7 +66,8 @@ function App() {
             <Card>
             <Card.Body>
               {/* <div key={person.id || person.name}> */}
-              <div class="row">
+              {/* <div class="row"> */}
+              <div class="container-fluid">
                 <div class="col-xs-4">
                 {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
