@@ -74,8 +74,8 @@ function App() {
                   <img src={person.image} style={{width: 50,height:50}}/>
                 </div>
                 <div class="col-xs-6">
-                  <div class="row">{person.name}</div>
-                  <div class="row">{person.description}</div>
+                  <div>{person.name}</div>
+                  <div>{person.description}</div>
                 </div>
                 <div class="col-xs-2">
                   <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
@@ -103,9 +103,10 @@ function App() {
         onChange={onChange}
       />
 
-      <AmplifySignOut />
+      {/* <AmplifySignOut /> */}
     </div>
   );
 }
 
-export default withAuthenticator(App);
+//export default withAuthenticator(App);
+export default App;
