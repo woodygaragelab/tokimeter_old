@@ -75,8 +75,8 @@ function App() {
                   <img src={person.image} style={{width: 50,height:50}}/>
                 </div>
                 <div class="col-xs-6">
-                  <div>{person.name}</div>
-                  <div>{person.description}</div>
+                  <div class="col-xs-6">{person.name}</div>
+                  <div class="col-xs-6">{person.description}</div>
                 </div>
                 {/* <div class="col-xs-2"> */}
                 <div class="col-xs-2 pull-right">
@@ -90,27 +90,31 @@ function App() {
         }
         </div>
 
-      <Button onClick={createPerson} variant="outline-primary">ADD</Button>
-      <div class="col-xs-3">
-        <input
-          onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-          placeholder="name"
-          value={formData.name}
-        />
-      </div>
-      <div class="col-xs-3">
-        <input
-          onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-          placeholder="description"
-          value={formData.description}
-        />
-      </div>
-      <div class="col-xs-3">
-        <input
-          type="file"
-          onChange={onChange}
-        />
-      </div>
+      <div class="container-fluid">
+      <div class="row">
+        <Button onClick={createPerson} variant="outline-primary">ADD</Button>
+        <div class="col-xs-3">
+          <input
+            onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+            placeholder="name"
+            value={formData.name}
+          />
+        </div>
+        <div class="col-xs-3">
+          <input
+            onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+            placeholder="description"
+            value={formData.description}
+          />
+        </div>
+        <div class="col-xs-3">
+          <input
+            type="file"
+            onChange={onChange}
+          />
+        </div>
+      </div>              
+      </div>              
 
       {/* <AmplifySignOut /> */}
     </div>
