@@ -115,10 +115,10 @@ function App() {
       </div>              
       </div>              
 
-      <AmplifySignOut />
+      {/* <AmplifySignOut /> */}
     </div>
   );
 }
 
-export default withAuthenticator(App);
-// export default App;
+// export default withAuthenticator(App);
+export default App;
