@@ -67,17 +67,17 @@ function App() {
               {/* <div key={person.id || person.name}> */}
               <div class="container-fluid">
               <div class="row">
-                <div class="col-xs-4">
+                <div class="col-4">
                 {/* {
                   person.image && <img src={person.image} style={{width: 100}} />
                 } */}
                   <img src={person.image} style={{width: 50,height:50}}/>
                 </div>
                 {/* <div class="col-xs-6"> */}
-                  <div class="col-xs-4">{person.name}</div>
-                  <div class="col-xs-2">{person.description}</div>
+                  <div class="col-4">{person.name}</div>
+                  <div class="col-2">{person.description}</div>
                 {/* </div> */}
-                <div class="col-xs-2">
+                <div class="col-2">
                 {/* <div class="col-xs-2 pull-right"> */}
                   <Button onClick={() =>  deletePerson(person)} variant="outline-primary">Delete</Button>
                 </div>
