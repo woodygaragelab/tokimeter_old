@@ -4,9 +4,3 @@ type Item @model {
   description: String
   image: String
 }
-type Person @model {
-  id: ID!
-  name: String!
-  description: String
-  image: String
-}
