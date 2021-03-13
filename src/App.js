@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Food Stock</h1>
+      <h1>Tokimeter</h1>
       <div style={{marginBottom: 30}}>
         {
           items.map(item => (
