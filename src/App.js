@@ -15,9 +15,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
-  useEffect(() => {
-    fetchItems();
-  }, []);
+  useEffect(() => {  fetchItems(); }, []);
 
   async function fetchItems() {
     const apiData = await API.graphql({ query: listItems });
